@@ -148,7 +148,7 @@ def simulate(prices, pv, load):
     # =========================
     # ECONOMIA
     # =========================
-    df["Revenue_market"] = df["Discharge_Grid"] * df["Prezzo"]
+    df["Revenue_market"] = df["Discharge_Grid"] * df["Prezzo"]+df["Discharge_Load_PV"]* df["Prezzo"]
     df["Cost_grid"] = df["Charge_Grid"] * df["Prezzo"]
     df["Opportunity_PV"] = df["Charge_PV"] * df["Prezzo"]
     df["Saving_oneri"] = df["Discharge_Load_PV"] * oneri
